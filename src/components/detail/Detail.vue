@@ -4,6 +4,7 @@
        <Planet v-if="type === 'planet'"  />
       <Character v-if="type === 'character'"  />
        <Starships v-if="type === 'starships'"  />
+        <Details v-if="type === 'deails'"  />
   
    
   </div>
