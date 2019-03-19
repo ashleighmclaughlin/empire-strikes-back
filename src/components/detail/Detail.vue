@@ -30,7 +30,6 @@ export default {
 
   },
     created: function() {
-    console.log(this.$route.params);
     if (this.$route.params.type) {
        this.type = this.$route.params.type;
     }

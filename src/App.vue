@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import MyHeader from "./components/MyHeader";
 import MyFooter from "./components/MyFooter";
 
 export default {
