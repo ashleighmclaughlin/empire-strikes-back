@@ -2,13 +2,19 @@
   <div><p @click="navigateTo('character')">Character</p>
   <p @click="navigateTo('planet')">Planet</p>
   <p @click="navigateTo('Starships')">Starships</p>
+  <Credits />
   </div>
   
 </template>
 
 <script>
+import Credits from "./Credits";
+
 export default {
   name: "Home",
+  components: {
+    Credits
+  },
   data: function() {
     return {
    
