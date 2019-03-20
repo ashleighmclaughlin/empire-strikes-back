@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <router-view></router-view>
+    <!-- <Credits /> -->
     <MyFooter />
   </div>
 </template>
 
 <script>
 import MyFooter from "./components/MyFooter";
+// import Credits from "./components/home/Credits";
 
 export default {
   name: "App",
   components: {
-    MyFooter
+    MyFooter,
+    // Credits
   }
 };
 </script>
@@ -23,6 +26,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
 }
 </style>
+ 

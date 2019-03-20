@@ -7,32 +7,30 @@
         <Details v-if="type === 'details'"  />
   
    
+      <Content />
+      <Info />
+      <MyFooter/>
   </div>
 </template>
 
 <script>
 import MyHeader from "../MyHeader"
-import Character from "./Character";
-import Planet from "./Planet";
-import Starships from "./Starships"
 
 export default {
   name: "Detail",
   data: function() {
     return {
-      type: '',
+      searchQuery: '',
     };
   },
   components: {
-    MyHeader,
-    Character,
-    Planet,
-    Starships
+    MyHeader
 
   },
     created: function() {
-    if (this.$route.params.type) {
-       this.type = this.$route.params.type;
+    if (this.$route.params.searchQuery) {
+       this.searchQuery = this.$route.params.searchQuery;
+       console.log(this.$route.params.searchQuery)
     }
   }
 

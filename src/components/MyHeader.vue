@@ -1,18 +1,20 @@
 <template>
-  <div class="container">
-  <header>
-  
+  <div class="container-fullwidth">
 
+  <header class=" navbar-static-top">
+   <nav class="navbar navbar-light bg-dark navbar-inner" id="main-nav">
+   <router-link class="back" to="/">Back</router-link>
  
- <nav class="navbar navbar-light bg-dark" id="main-nav">
-   <router-link to="/">Back</router-link>
-  <!-- <a class="navbar-brand">Back</a> -->
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
+
  
+
+ 
+  
   </header>
   </div>
 </template>
@@ -29,4 +31,10 @@ export default {
  padding:20px 40px 15px 40px;
  margin-bottom: 50px;
 }
+ .back {
+   margin-left: 100px;
+ }
+ #app {
+  margin-top: 0;
+ }
 </style>
