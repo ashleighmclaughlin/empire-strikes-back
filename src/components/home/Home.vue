@@ -14,22 +14,28 @@
           <area @click="navigateTo('')" target="" alt="bomber" title="bomber" href="" coords="1208,568,1231,563,1232,587,1254,602,1287,600,1302,590,1339,585,1358,617,1351,641,1317,676,1287,693,1251,658,1207,649,1156,656,1156,629,1185,592" shape="poly">
       </map>
     </div>
+    <Credits />
   </div>
 </template>
 
 
 
 <script>
+import Credits from "./Credits";
+
 export default {
   name: "Home",
+  components: {
+    Credits
+  },
   data: function() {
     return {
    
     };
   },
   methods: {
-    navigateTo: function(type) {
-      this.$router.push({ name: "detail", params: { type: type } });
+    navigateTo: function(searchQuery) {
+      this.$router.push({ name: "detail", params: { searchQuery: searchQuery } });
     }
   },
   created: function() {
