@@ -30,7 +30,6 @@ export default {
     created: function() {
     if (this.$route.params.searchQuery) {
        this.searchQuery = this.$route.params.searchQuery;
-       console.log(this.$route.params.searchQuery)
     }
   }
 
