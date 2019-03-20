@@ -32,7 +32,7 @@ export default {
  margin-bottom: 50px;
 }
  .back {
-   margin-left: 100px;
+   margin-left: 10px;
  }
  #app {
   margin-top: 0;
