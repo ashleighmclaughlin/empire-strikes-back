@@ -1,17 +1,14 @@
 <template>
-  <div class="container">
-    <h1>Planet</h1>
-  </div>
+  <p></p>
 </template>
 
 <script>
-export default {
-  name: "Planet",
- 
-};
+  export default {
+    name: "Content"
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  
 </style>

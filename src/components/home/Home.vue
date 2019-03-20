@@ -12,20 +12,26 @@
       <!-- <img @click="navigateTo('starships')" class="landing-img y-wing" src="../../../images/y-wing.png" alt=""> -->
       <!-- <img @click="navigateTo('starships')" class="landing-img x-wing" src="../../../images/x-wing.png" alt=""> -->
     </div>
+    <Credits />
   </div>
 </template>
 
 <script>
+import Credits from "./Credits";
+
 export default {
   name: "Home",
+  components: {
+    Credits
+  },
   data: function() {
     return {
    
     };
   },
   methods: {
-    navigateTo: function(type) {
-      this.$router.push({ name: "detail", params: { type: type } });
+    navigateTo: function(searchQuery) {
+      this.$router.push({ name: "detail", params: { searchQuery: searchQuery } });
     }
   },
   created: function() {
@@ -36,60 +42,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.landing-img{
+.landing-planet,
+.landing-character,
+.landing-starship {
   /* max-width: 400px; */
   position: absolute;
 }
-
-.moon{
-  z-index: 1;
-  max-width: 400px;
-  left: calc(50vw - 100px);
-}
-
-.dagobah{
-  z-index: 2;
-  max-width: 200px;
-  right: calc(50vw - 10px);
-}
-
-.tie-bomber{
-  z-index: 3;
-}
-
-.darth{
-  z-index: 4;
-  max-width: 900px;
-  right: calc(50vw - 550px);
-}
-
-.leia{
-  z-index: 5;
-}
-
-.luke{
-  z-index: 6;
-  max-width: 400px;
-  left: (50vw - 200px);
-  right: (50vw - 200px)
-}
-
-.r2-d2{
-  z-index: 7;
-}
-
-.c-3po{
-  z-index: 8;
-}
-
-.y-wing{
-  z-index: 9;
-}
-
-.x-wing{
-  z-index: 10;
-}
-
-
-
 </style>
