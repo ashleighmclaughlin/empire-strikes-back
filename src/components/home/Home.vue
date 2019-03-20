@@ -1,4 +1,8 @@
 <template>
+<<<<<<< HEAD
+=======
+
+>>>>>>> e813f579c42e6e61e0147a6bbeeeb735a3d7e949
   <div>
     <div class="landing-collage">
       <img @click="navigateTo('planet')" class="landing-planet" src="../../../images/moon.png" alt="">
@@ -12,7 +16,13 @@
       <img @click="navigateTo('starships')" class="landing-starship" src="../../../images/y-wing.png" alt="">
       <img @click="navigateTo('starships')" class="landing-starship" src="../../../images/x-wing.png" alt="">
     </div>
+<<<<<<< HEAD
     <Credits />
+=======
+    
+    <Credits />
+
+>>>>>>> e813f579c42e6e61e0147a6bbeeeb735a3d7e949
   </div>
 </template>
 
