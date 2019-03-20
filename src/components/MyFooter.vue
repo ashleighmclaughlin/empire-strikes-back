@@ -12,5 +12,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  
+  p{
+    width: 60%;
+    margin: 0 auto;
+    padding: 40px;
+  }
 </style>
