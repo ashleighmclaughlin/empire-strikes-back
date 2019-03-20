@@ -1,45 +1,35 @@
 <template>
   <div>
     <MyHeader />
-      <Content />
-      <Info data="data" />
-      <MyFooter />
+      <Content data="data" />
+      <info data="data" />
   </div>
 </template>
 
 <script>
 import MyHeader from "../MyHeader"
-import Content from "./Content";
-import Info from "./Info";
-import MyFooter from "../MyFooter";
-
 export default {
   name: "Detail",
-  props: ["data"],
-  data: function(){
-    return{
-      data: {},
-      searchQuery: "",
-    }
-  }, 
   components: {
-    MyHeader,
-    Content,
-    Info,
-    MyFooter,
-    },
-    created: function() {      
-      if (this.$route.params.searchQuery) {
-        this.searchQuery = this.$route.params.searchQuery;}
+    MyHeader
+  },
+  data: function() {
+    return {
+      data: {},
+      searchQuery: ""
+    }
+  },
+    created: function() {
+    if (this.$route.params.searchQuery) {
+       this.searchQuery = this.$route.params.searchQuery;
         this.$http
-          .get("https://swapi.co/api" + data)
-          .then(function(data) {
-            this.data = data;
-          });
+        .get("https://swapi.co/api/" + this.searchQuery)
+        .then(function(data) {
+          this.data = data;
+        });
+    }
   }
-}
+};
 </script>
 
-<style scoped> 
-
-</style>
+<style scoped></style>
