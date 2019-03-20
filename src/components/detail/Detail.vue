@@ -2,9 +2,8 @@
   <div>
     <MyHeader />
       <Content />
-      <Info/>
-    <MyFooter />
-   
+      <Info data="data" />
+      <MyFooter />
   </div>
 </template>
 
@@ -16,26 +15,29 @@ import MyFooter from "../MyFooter";
 
 export default {
   name: "Detail",
-  data: function() {
-    return { 
-      searchQuery: '',
-    };
-  },
+  props: ["data"],
+  data: function(){
+    return{
+      data: {},
+      searchQuery: "",
+    }
+  }, 
   components: {
     MyHeader,
     Content,
     Info,
-    MyFooter
-
-  },
-    created: function() {
-    if (this.$route.params.searchQuery) {
-       this.searchQuery = this.params.searchQuery;
-
-    }
+    MyFooter,
+    },
+    created: function() {      
+      if (this.$route.params.searchQuery) {
+        this.searchQuery = this.$route.params.searchQuery;}
+        this.$http
+          .get("https://swapi.co/api" + data)
+          .then(function(data) {
+            this.data = data;
+          });
   }
-
-};
+}
 </script>
 
 <style scoped> 
