@@ -30,11 +30,6 @@ export default {
   components: {
     Credits
   },
-  data: function() {
-    return {
-   
-    };
-  },
   methods: {
     navigateTo: function(searchQuery) {
       this.$router.push({ name: "detail", params: { searchQuery: searchQuery } });

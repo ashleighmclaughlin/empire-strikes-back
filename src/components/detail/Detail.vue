@@ -27,7 +27,6 @@ export default {
         .get("https://swapi.co/api/" + this.searchQuery)
         .then(function(data) {
           this.data = data;
-          
         });
     }
   }
