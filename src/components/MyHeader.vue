@@ -6,7 +6,7 @@
    <router-link class="back" to="/">Back</router-link>
  
   <form class="form-inline">
-    <input v-model="searchDetails" class="form-control mr-sm-2" type="text" placeholder="Search Starwars" aria-label="Search">
+    <option v-model="searchDetails" class="form-control mr-sm-2" type="text" placeholder="Search Starwars" aria-label="Search"></option>
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
