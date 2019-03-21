@@ -2,11 +2,11 @@
   <div class="container-fullwidth">
 
   <header class=" navbar-static-top">
-   <nav class="navbar navbar-light navbar-inner" id="main-nav">
+   <nav class="navbar navbar-light bg-dark navbar-inner" id="main-nav">
    <router-link class="back" to="/">Back</router-link>
  
   <form class="form-inline">
-    <option v-model="searchDetails" class="form-control mr-sm-2" type="text" placeholder="Search Starwars" aria-label="Search"></option>
+    <input v-model="searchDetails" class="form-control mr-sm-2" type="text" placeholder="Search Starwars" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
@@ -25,8 +25,15 @@ export default {
 
   data: function(){
   return {
-    searchDetails: ''
+    details:[],
+    search: ''
   }
+},
+creaded(){
+  this.$http.get(
+    "https://swapi.co/api/"
+  )
+  then.details = data.body.details
 },
 methods: {
   detailChanged: function(e) {
@@ -35,8 +42,8 @@ methods: {
 },
 computed: {
   filteredDetails: function(){
-    return this.searchDetails.filter((searchDetails) => {
-      return searchDetails.title.match(this.search);
+    return this.Details.filter((Details) => {
+      return Details.title.match(this.search);
     })
   }
 }
@@ -51,7 +58,6 @@ computed: {
 #main-nav {
  padding:20px 40px 15px 40px;
  margin-bottom: 50px;
- background-color: #222;
 }
  .back {
    margin-left: 10px;
