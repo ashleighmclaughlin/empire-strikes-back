@@ -9,10 +9,12 @@
   export default {
     name: "Content",
     props: ["data"],
-// props looking for name
- 
+    watch: {
+      data: function(val) {
+        this.data=val;
+      }
+    }
   }
-  
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -1,17 +1,23 @@
 <template>
   <div>
     <MyHeader />
-      <Content data="data" />
+    <Content v-bind:data="data" />
+    <info v-bind:data="data" />
   </div>
 </template>
 
 <script>
 import MyHeader from "../MyHeader"
-
+import Content from "./Content"
+import Info from "./Info"
 export default {
   name: "Detail",
   components: {
-    MyHeader
+    MyHeader,
+    Content,
+    Info
+
+
   },
   data: function() {
     return {
@@ -26,10 +32,10 @@ export default {
         .get("https://swapi.co/api/" + this.searchQuery)
         .then(function(data) {
           this.data = data;
+          
         });
     }
   }
-
 };
 </script>
 
