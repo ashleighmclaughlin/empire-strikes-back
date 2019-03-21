@@ -1,8 +1,8 @@
 <template>
   <div>
     <MyHeader />
-      <Content v-bind:data="data" />
-      <info v-bind:data="data" />
+    <Content v-bind:data="data" />
+    <info v-bind:data="data" />
   </div>
 </template>
 
@@ -26,7 +26,6 @@ export default {
     }
   },
     created: function() {
-      
     if (this.$route.params.searchQuery) {
        this.searchQuery = this.$route.params.searchQuery;
         this.$http

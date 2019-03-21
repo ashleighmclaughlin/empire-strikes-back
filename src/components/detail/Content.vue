@@ -9,9 +9,11 @@
   export default {
     name: "Content",
     props: ["data"],
-    
-// props looking for name
- 
+    watch: {
+      data: function(val) {
+        this.data=val;
+      }
+    }
   }
 </script>
 
