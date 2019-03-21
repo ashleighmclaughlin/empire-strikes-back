@@ -1,7 +1,7 @@
 <template>
   <div>
     <MyHeader />
-      <Content data="data" />
+      <Content v-bind:data="data" />
   </div>
 </template>
 
@@ -20,12 +20,14 @@ export default {
     }
   },
     created: function() {
+      // console.log("Hello");
     if (this.$route.params.searchQuery) {
        this.searchQuery = this.$route.params.searchQuery;
         this.$http
         .get("https://swapi.co/api/" + this.searchQuery)
         .then(function(data) {
           this.data = data;
+          
         });
     }
   }
