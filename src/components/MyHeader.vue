@@ -6,22 +6,22 @@
    <router-link class="back" to="/">Back</router-link>
  
   <form class="form-inline">
-    <input v-model="details" class="form-control mr-sm-2" type="text" placeholder="Search Starwars" aria-label="Search">
-    <button v-on:click="details" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <input v-model="searchTerm" v-on:keyup.enter="onSearch">
+    <button v-on:click="detail" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
 
- 
-
- 
-  
   </header>
+  <div class="media-center">
+    <img class="media-object" v-bind:src="details">
+  </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "MyHeader",
+  name: "Content",
   props: ["data"],
     watch: {
       data: function(val) {
@@ -30,23 +30,17 @@ export default {
     },
   data: function(){
   return {
-    details:[],
-    search: ''
+     searchTerm: ""
+   
   }
 },
 
 methods: {
-  detailsChanged: function(e) {
-    this.$emit("$detailsChanged", e.target.key)
-  }
+   onSearch: function() {
+      console.log("searchTerm", this.searchTerm);
+    }
 },
-computed: {
-  filteredDetails: function(){
-    return this.details.filter((details) => {
-      return details.title.match(this.search);
-    })
-  }
-}
+
 };
 
 
@@ -64,5 +58,8 @@ computed: {
  }
  #app {
   margin-top: 0;
+ }
+ .media-object {
+   width: 500px;
  }
 </style>
