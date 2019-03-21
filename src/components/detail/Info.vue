@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <p>
-          {{ data.name }}
+          Name: {{ data.name }}
       </p>
     </div>
   </div>
@@ -11,9 +11,15 @@
 <script>
 export default {
   name: "Info",
-  props: ["data"]
-}
+  props: ["data"],
+  watch: {
+    data: function(val) {
+      this.data=val;
+    }
+  }
+};
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped></style>

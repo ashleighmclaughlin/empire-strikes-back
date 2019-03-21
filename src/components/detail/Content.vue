@@ -9,10 +9,10 @@
   export default {
     name: "Content",
     props: ["data"],
+    
 // props looking for name
  
   }
-  
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
