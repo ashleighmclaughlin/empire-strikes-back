@@ -6,7 +6,7 @@
    <router-link class="back" to="/">Back</router-link>
  
   <form class="form-inline">
-    <input v-model="searchDetails" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <input v-model="searchDetails" class="form-control mr-sm-2" type="text" placeholder="Search Starwars" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
@@ -25,14 +25,19 @@ export default {
 
   data: function(){
   return {
-    searchDetails: [
-{ }
-    ]
+    searchDetails: ''
   }
 },
 methods: {
   detailChanged: function(e) {
     this.$emit("$detailChanged", e.target.key)
+  }
+},
+computed: {
+  filteredDetails: function(){
+    return this.searchDetails.filter((searchDetails) => {
+      return searchDetails.title.match(this.search);
+    })
   }
 }
 };
