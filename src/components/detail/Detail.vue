@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MyHeader />
+    <MyHeader v-bind:data="data" />
     <Content v-bind:data="data" />
     <info v-bind:data="data" />
   </div>

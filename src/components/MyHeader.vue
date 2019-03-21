@@ -6,7 +6,7 @@
    <router-link class="back" to="/">Back</router-link>
  
   <form class="form-inline">
-    <input v-model="searchDetails" class="form-control mr-sm-2" type="text" placeholder="Search Starwars" aria-label="Search">
+    <input v-model="details" class="form-control mr-sm-2" type="text" placeholder="Search Starwars" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
@@ -22,28 +22,28 @@
 <script>
 export default {
   name: "MyHeader",
-
+  props: ["data"],
+    watch: {
+      data: function(val) {
+        this.data=val;
+      }
+    },
   data: function(){
   return {
     details:[],
     search: ''
   }
 },
-creaded(){
-  this.$http.get(
-    "https://swapi.co/api/"
-  )
-  then.details = data.body.details
-},
+
 methods: {
-  detailChanged: function(e) {
-    this.$emit("$detailChanged", e.target.key)
+  detailsChanged: function(e) {
+    this.$emit("$detailsChanged", e.target.key)
   }
 },
 computed: {
   filteredDetails: function(){
-    return this.Details.filter((Details) => {
-      return Details.title.match(this.search);
+    return this.details.filter((details) => {
+      return details.title.match(this.search);
     })
   }
 }
