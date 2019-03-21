@@ -1,15 +1,7 @@
 <template>
   <div>
     <MyHeader />
-       <Planet v-if="type === 'planet'"  />
-      <Character v-if="type === 'character'"  />
-       <Starships v-if="type === 'starships'"  />
-        <Details v-if="type === 'details'"  />
-  
-   
-      <Content />
-      <Info />
-      <MyFooter/>
+      <Content data="data" />
   </div>
 </template>
 
@@ -18,19 +10,23 @@ import MyHeader from "../MyHeader"
 
 export default {
   name: "Detail",
-  data: function() {
-    return {
-      searchQuery: '',
-    };
-  },
   components: {
     MyHeader
-
+  },
+  data: function() {
+    return {
+      data: {},
+      searchQuery: ""
+    }
   },
     created: function() {
     if (this.$route.params.searchQuery) {
        this.searchQuery = this.$route.params.searchQuery;
-       console.log(this.$route.params.searchQuery)
+        this.$http
+        .get("https://swapi.co/api/" + this.searchQuery)
+        .then(function(data) {
+          this.data = data;
+        });
     }
   }
 

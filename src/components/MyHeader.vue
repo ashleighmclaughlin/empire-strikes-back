@@ -2,7 +2,7 @@
   <div class="container-fullwidth">
 
   <header class=" navbar-static-top">
-   <nav class="navbar navbar-light bg-dark navbar-inner" id="main-nav">
+   <nav class="navbar navbar-light navbar-inner" id="main-nav">
    <router-link class="back" to="/">Back</router-link>
  
   <form class="form-inline">
@@ -51,6 +51,7 @@ computed: {
 #main-nav {
  padding:20px 40px 15px 40px;
  margin-bottom: 50px;
+ background-color: #222;
 }
  .back {
    margin-left: 10px;
