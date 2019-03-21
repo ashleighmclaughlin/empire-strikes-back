@@ -7,7 +7,7 @@
  
   <form class="form-inline">
     <input v-model="details" class="form-control mr-sm-2" type="text" placeholder="Search Starwars" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <button v-on:click="details" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
 
