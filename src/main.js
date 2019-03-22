@@ -3,7 +3,6 @@ import VueResource from "vue-resource";
 import VueRouter from "vue-router";
 import Detail from "./components/detail/Detail.vue";
 import Home from "./components/home/Home.vue";
-
 import App from "./App.vue";
 
 Vue.use(VueResource);

@@ -27,13 +27,13 @@ export default {
   },
   created: function() {
     if (this.$route.params.searchQuery) {
-      console.log(this.$route.params);
+      // console.log(this.$route.params);
       this.searchQuery = this.$route.params.searchQuery;
         this.$http
         .get("https://swapi.co/api/" + this.searchQuery)
         .then(function(contentdata) {
           this.contentdata = contentdata.body;
-          console.log(this.contentdata)
+          // console.log(this.contentdata)
         });
     }
   }
