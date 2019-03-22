@@ -6,14 +6,14 @@
    <router-link class="back" to="/"><i class="fas fa-long-arrow-alt-left"></i></router-link>
   <!-- <img class="nav-image" src="../../images/logo.png"> -->
   <form class="form-inline">
-    <input v-model="searchTerm" v-on:keyup.enter="onSearch">
-    <button v-on:click="detail" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <input v-model="searchTerm" v-on:keydown.enter.prevent="searchChanged()">
+   
   </form>
 </nav>
 
   </header>
   <div class="media-center">
-    <img class="media-object" v-bind:src="details">
+    <!-- <img class="media-object" v-bind:src="detail"> -->
   </div>
   </div>
 </template>
@@ -36,8 +36,9 @@ export default {
 },
 
 methods: {
-   onSearch: function() {
-      console.log("searchTerm", this.searchTerm);
+    searchChanged: function() {
+      this.$emit("$searchChanged", this.searchTerm)
+      console.log(this.searchTerm)
     }
 },
 
