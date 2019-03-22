@@ -32,8 +32,8 @@ export default {
         this.$http
         .get("https://swapi.co/api/" + this.searchQuery)
         .then(function(contentdata) {
-          this.searchQuery = contentdata;
-          
+          this.contentdata = contentdata.body;
+          console.log(this.contentdata)
         });
     }
   }
